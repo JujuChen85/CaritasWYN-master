@@ -1,0 +1,99 @@
+﻿@model CaritasWYN.Models.Client
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<h4><b>Clients Personal details</b></h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-da nger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferrerId" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <select asp-for="ReferrerId" class="form-control" asp-items="ViewBag.ReferrerId"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Room" class="form-control" />
+                    <span asp-validation-for="Room" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Floor" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Floor" class="form-control" />
+                    <span asp-validation-for="Floor" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Street" class="form-control" />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Building" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Building" class="form-control" />
+                    <span asp-validation-for="Building" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="District" class="form-control" />
+                    <span asp-validation-for="District" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <a asp-action="Index" class="btn btn-default btn-sm">Cancel</a>
+                        <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

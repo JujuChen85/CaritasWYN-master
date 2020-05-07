@@ -1,0 +1,24 @@
+#calendar-wrapper {
+  height: 200vh; }
+
+#calendar {
+  top: 15em;
+  left: 10em;
+  right: 10em;
+  bottom: 0em; }
+
+.fc-header-toolbar {
+  padding-top: 25em;
+  padding-left: 5em;
+  padding-right: 5em; }
+
+#calendar a.fc-event {
+  color: #fff;
+  /* bootstrap default styles make it black. undo */ }
+
+#eventModal label {
+  text-align: right; }
+
+.modal-footer {
+  justify-content: space-between !important; }
+

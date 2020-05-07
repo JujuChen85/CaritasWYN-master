@@ -1,0 +1,56 @@
+﻿@model CaritasWYN.Models.Referrer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4><b>Referrer details</b></h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Type" class="form-control" />
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Office" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Office" class="form-control" />
+                    <span asp-validation-for="Office" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <a asp-action="Index" class="btn btn-default btn-sm">Cancel</a>
+                        <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                    </div>
+                </div>
+            </div>            
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

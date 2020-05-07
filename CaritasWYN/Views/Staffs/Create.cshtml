@@ -1,0 +1,48 @@
+﻿@model CaritasWYN.Models.Staff
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4><b>Staff's Job Duty</b></h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobDutyId" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <select asp-for="JobDutyId" class="form-control" asp-items="ViewBag.JobDutyId"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <a asp-action="Index" class="btn btn-default btn-sm">Cancel</a>
+                        <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

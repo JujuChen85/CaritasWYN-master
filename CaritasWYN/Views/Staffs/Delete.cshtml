@@ -1,0 +1,35 @@
+﻿@model CaritasWYN.Models.Staff
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4><b>Delete Confirmation</b></h4>
+<h5>Are you sure you want to delete this?</h5>
+<hr />
+
+<div class="row col-md-8 col-lg-offset-2">
+    <table class="table table-bordered success">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                <td>@Html.DisplayFor(model => model.FirstName)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                <td>@Html.DisplayFor(model => model.LastName)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.JobDuty)</th>
+                <td>@Html.DisplayFor(model => model.JobDuty.JobType)</td>
+            </tr>
+        </thead>
+    </table>
+
+    <form asp-action="Delete" class="pull-right">
+        <input type="hidden" asp-for="StaffId" />
+        <a asp-action="Index" class="btn btn-default btn-sm">Cancel</a>
+        <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+    </form>
+    
+</div>

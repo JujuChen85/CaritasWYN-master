@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CaritasWYN.Models.Group>
+
+@{
+    ViewBag.Title = "Group";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4><b>List of Groups</b></h4>
+
+<table class="table table-striped custab">
+    <thead>
+        <a asp-action="Create" class="btn btn-primary btn-sm pull-right"><b>+</b> Add New</a>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Staff)</th>
+            <th>@Html.DisplayNameFor(model => model.Client)</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Staff.FirstName) @Html.DisplayFor(modelItem => item.Staff.LastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Client.FirstName) @Html.DisplayFor(modelItem => item.Client.LastName)</td>
+            <td class="text-center">
+                <a class="btn btn-info btn-xs" asp-action="Edit" asp-route-id="@item.GroupId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.GroupId"><span class="glyphicon glyphicon-remove"></span> Del</a>
+            </td>
+         </tr>
+    }
+</table>

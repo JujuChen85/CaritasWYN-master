@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CaritasWYN.Models.JobDuty>
+
+@{
+    ViewBag.Title = "Job Duty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4><b>List of Job Duties</b></h4>
+
+<table class="table table-striped custab">
+    <thead>
+        <a asp-action="Create" class="btn btn-primary btn-sm pull-right"><b>+</b> Add New</a>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.JobType)</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.JobType)</td>           
+            <td class="text-center">
+                <a class="btn btn-info btn-xs" asp-action="Edit" asp-route-id="@item.JobDutyId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.JobDutyId"><span class="glyphicon glyphicon-remove"></span> Del</a>
+            </td>
+        </tr>
+    }
+</table>

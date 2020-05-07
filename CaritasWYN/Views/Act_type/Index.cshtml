@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CaritasWYN.Models.Act_type>
+
+@{
+    ViewBag.Title = "Activity Type";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4><b>List of Activity</b></h4>
+
+<div class="row col-md-12 custyle">
+    <table class="table table-striped custab">
+        <thead>
+            <a asp-action="Create" class="btn btn-primary btn-sm pull-right"><b>+</b> Add New</a>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ActivityName)</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ActivityName)</td>
+                <td class="text-center">
+                    <a class="btn btn-info btn-xs" asp-action="Edit" asp-route-id="@item.Act_typeId"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    <a class="btn btn-danger btn-xs" asp-action="Delete" asp-route-id="@item.Act_typeId"><span class="glyphicon glyphicon-remove"></span> Del</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
